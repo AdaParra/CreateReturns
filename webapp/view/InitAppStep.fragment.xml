@@ -1,0 +1,150 @@
+<core:FragmentDefinition
+  xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+  xmlns="sap.m"
+  controllerName="CreateReturns.controller.CreateReturns">
+
+
+  <VBox class="sapUiSmallMargin">
+
+<!--       <OverflowToolbar class="sapUiMediumMarginTop">
+  <ToolbarSpacer/>
+  <Label text="Refrescar Valores" />
+  <Button text="" type="Default" icon="sap-icon://refresh"/>
+</OverflowToolbar> -->
+
+    <f:SimpleForm id="SimpleFormChange480_Trial"
+      editable="true"
+      layout="ResponsiveGridLayout"
+      labelSpanXL="4"
+      labelSpanL="4"
+      labelSpanM="4"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="0"
+      emptySpanL="0"
+      emptySpanM="0"
+      emptySpanS="0"
+      columnsXL="3"
+      columnsL="2"
+      columnsM="2"
+      singleContainerFullSize="false" >
+      <f:content>
+
+        <core:Title text="" />
+        <Label text="Organizacion de Ventas:" />
+              <SearchField
+                id="searchField-1"
+                placeholder="Organizacion de Ventas"
+                enableSuggestions="true"
+                search="onSearch"
+                suggest="onSuggest_"
+                liveChange="onLiveChange"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/0/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+        <Label text="Canal de Distribución:" />
+              <SearchField
+                id="searchField-2"
+                placeholder="Canal de Distribución"
+                enableSuggestions="true"
+                search="onSearch"
+                suggest="onSuggest_"
+                liveChange="onLiveChange"
+                enabled="false"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/1/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+        <Label text="Sector:" />
+              <SearchField
+                id="searchField-3"
+                placeholder="Sector"
+                enableSuggestions="true"
+                search="onSearch"
+                enabled="false"
+                liveChange="onLiveChange"
+                suggest="onSuggest_"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/2/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+
+
+        <core:Title text="" />
+        <Label text="Oficina de Ventas:" />
+              <SearchField
+                id="searchField-4"
+                placeholder="Oficina de Ventas"
+                enableSuggestions="true"
+                search="onSearch"
+                liveChange="onLiveChange"
+                enabled="false"
+                suggest="onSuggest_"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/3/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+        <Label text="Grupo de Vendedores:" />
+              <SearchField
+                id="searchField-5"
+                placeholder="Grupo de Vendedores"
+                enableSuggestions="true"
+                search="onSearch"
+                enabled="false"
+                liveChange="onLiveChange"
+                suggest="onSuggest_"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/4/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+        <Label text="Clase de Documento:" />
+              <SearchField
+                id="searchField-6"
+                placeholder="Clase de Documento"
+                enableSuggestions="true"
+                search="onSearch"
+                enabled="false"
+                suggest="onSuggest_"
+                liveChange="onLiveChange"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/5/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+      </f:content>
+    </f:SimpleForm>
+  </VBox>
+</core:FragmentDefinition>

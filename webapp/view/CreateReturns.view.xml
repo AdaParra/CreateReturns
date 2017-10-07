@@ -1,0 +1,51 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="CreateReturns.controller.CreateReturns"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<NavContainer id="wizardNavContainer">
+		<pages>
+			<Page
+				id="wizardContentPage"
+				showHeader="true"
+				title="{i18n>title}">	
+				<content>
+					<Wizard id="CreateProductWizard"
+						complete="wizardCompletedHandler">
+						
+							<WizardStep id="InitAppStep"
+										title="{i18n>titleInitAppStep}"
+										validated="false"
+										activate="InitAppStepValidation">
+								
+								<core:Fragment fragmentName="CreateReturns.view.InitAppStep" type="XML" />
+								
+							</WizardStep>
+							
+							<WizardStep id="InvoiceInfoStep"
+										title="{i18n>titleInvoiceInfoStep}"
+										validated="false"
+										activate="InvoiceInfoStepValidation">
+
+								<core:Fragment fragmentName="CreateReturns.view.InvoiceInfoStep" type="XML" />
+								
+							</WizardStep>
+							
+							<WizardStep id="InvoiceVerificationStep"
+										title="{i18n>titleInvoiceVerificationStep}"
+										validated="true">
+
+
+								<core:Fragment fragmentName="CreateReturns.view.InvoiceVerificationStep" type="XML" />
+							</WizardStep>
+					</Wizard>
+				</content>
+					
+					<footer>
+						<OverflowToolbar>
+							<ToolbarSpacer/>
+							<Button text="Cancelar" press="handleWizardCancel"/>
+						</OverflowToolbar>
+					</footer>
+			</Page>
+		</pages>
+	</NavContainer>
+</mvc:View>

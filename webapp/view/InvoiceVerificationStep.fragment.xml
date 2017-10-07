@@ -1,0 +1,112 @@
+<core:FragmentDefinition
+  xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+  xmlns="sap.m"
+  controllerName="CreateReturns.controller.CreateReturns">
+
+
+  <VBox class="sapUiSmallMargin">
+
+
+    <f:SimpleForm id="SimpleForm-Verification"
+      editable="true"
+      layout="ResponsiveGridLayout"
+      labelSpanXL="4"
+      labelSpanL="4"
+      labelSpanM="4"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="0"
+      emptySpanL="0"
+      emptySpanM="0"
+      emptySpanS="0"
+      columnsXL="3"
+      columnsL="2"
+      columnsM="2"
+      singleContainerFullSize="false" >
+      <f:content>
+
+
+        <core:Title text="" />         
+
+        <Label text="Cliente:" />
+          <Text text="{localData>/DataSelect/0/Cliente}"/>
+
+
+        <Label text="Fecha:" />
+          <Text text="{path:'localData>/DataSelect/0/fecha_factura', type:'sap.ui.model.type.Date', formatOptions: { style: 'long'}}"/>
+
+        <core:Title text="" /> 
+        <Label text="Monto total:" />
+          <Text text="{localData>/arrayData_01/7/data/0/montoTotal}"/>
+
+
+        <Label text="Impuesto del documento:" />
+          <Text text="{localData>/arrayData_01/7/data/0/impuestoDoc}"/>
+
+
+      </f:content>
+    </f:SimpleForm>
+
+            <Table id="idProductsTable"
+              inset="false"
+              items="{
+                path: 'localData>/arrayData_02/',
+                sorter: {
+                  path: 'name'
+                }
+              }">
+              <headerToolbar>
+                <Toolbar>
+                  <Title text="Materiales" level="H2"/>
+                </Toolbar>
+              </headerToolbar>
+              <columns>
+                <Column
+                  width="6em"
+                  hAlign="Center">
+                  <core:Icon src="sap-icon://edit"/>
+                </Column>
+                <Column
+                  minScreenWidth="Tablet"
+                  demandPopin="true"
+                  hAlign="Center">
+                  <Text text="Material" />
+                </Column>
+                <Column
+                  minScreenWidth="Tablet"
+                  demandPopin="true"
+                  hAlign="Center">
+                  <Text text="Cantidad" />
+                </Column>
+                <Column
+                  hAlign="Center">
+                  <Text text="Precio Neto" />
+                </Column>
+                <Column
+                  hAlign="Center">
+                  <Text text="Monto Neto" />
+                </Column>
+              </columns>
+              <items>
+                <ColumnListItem>
+                  <cells>
+                    <CheckBox text="" enabled="true" select="onSelectCheck" selected="{localData>selected}"/>
+                    <Text
+                      text="{localData>name}" />
+                    <Input value="{localData>cant}" type="Number" textAlign="Right" width="50%" enabled="{localData>check}" liveChange="onChangeInput"/>
+
+                    <ObjectNumber
+                        number="{localData>cost}"
+                        unit="" />
+                    <ObjectNumber
+                        number="{localData>montoNeto}"
+                        unit="" />
+                  </cells>
+                </ColumnListItem>
+              </items>
+            </Table>
+  </VBox>
+</core:FragmentDefinition>

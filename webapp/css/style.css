@@ -1,0 +1,29 @@
+/* Enter your custom styles here */
+
+.sapMTB {
+	    border-bottom: 0px;
+	}
+
+.sapUiMediumMarginTop {
+    margin-top: 0;
+}
+
+.sapUiFormResGrid>div {
+	padding: 0px;
+}
+
+.sapUiFormTitleH5 {
+	font-size: 0px;
+	margin-bottom: 0px;
+}
+
+.sapUiFormTitle .sapUiFormTitleH5{
+    width: 0px;
+    height: 0px;
+    margin-bottom: 0px;
+}
+
+.sapUiFormM .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 0rem;
+    line-height: 3rem;
+}

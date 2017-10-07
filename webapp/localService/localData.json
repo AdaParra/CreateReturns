@@ -1,0 +1,149 @@
+{
+	"arrayData_01": [
+			{
+				"id": 0,
+				"name": "Organizacion de Ventas",
+				"data": [
+					{
+						"id": 0,
+						"name": "Organizacion 001"
+					},
+					{
+						"id": 1,
+						"name": "Organizacion 002"
+					}
+					]
+			},
+			{
+				"id": 1,
+				"name": "Canal de Distribución",
+				"data": [
+					{
+						"id": 0,
+						"name": "Canal de Distribución 001"
+					},
+					{
+						"id": 1,
+						"name": "Canal de Distribución 002"
+					}]
+			},
+			{
+				"id": 2, 
+				"name": "Sector",
+				"data": [
+					{
+						"id": 0,
+						"name": "Sector 001"
+					},
+					{
+						"id": 1,
+						"name": "Sector 002"
+					}]
+			},
+			{
+				"id": 3, 
+				"name": "Oficina de Ventas",
+				"data": [
+					{
+						"id": 0,
+						"name": "Oficina de Ventas 001"
+					},
+					{
+						"id": 1,
+						"name": "Oficina de Ventas 002"
+					}]
+			},
+			{
+				"id": 4, 
+				"name": "Grupo de Vendedores",
+				"data": [
+					{
+						"id": 0,
+						"name": "Vendedores 001"
+					},
+					{
+						"id": 1,
+						"name": "Vendedores 002"
+					}]
+			},
+			{
+				"id": 5, 
+				"name": "Clase de Documento",
+				"data": [
+					{
+						"id": 0,
+						"name": "Documento 001"
+					},
+					{
+						"id": 1,
+						"name": "Documento 002"
+					}]
+			},
+			{
+				"id": 6, 
+				"name": "Cliente",
+				"data": [
+					{
+						"id": 0,
+						"name": "Cliente 001"
+					},
+					{
+						"id": 1,
+						"name": "Cliente 002"
+					}]
+			},
+			{
+				"id": 7, 
+				"name": "Facturas",
+				"data": [
+					{
+						"id": 0,
+						"name": "Factura 001",
+						"montoTotal": 45000,
+						"impuestoDoc": 2500
+					},
+					{
+						"id": 1,
+						"name": "Factura 002",
+						"montoTotal": 35000,
+						"impuestoDoc": 5500
+					}]
+			}
+		],
+
+	"arrayData_02": [
+		{
+			"id": 0,
+			"check": false,
+			"name": "Material 001",
+			"cant": 1,
+			"cost": 20000,
+			"montoNeto": 3000
+		},
+		{
+			"id": 1,
+			"check": false,
+			"name": "Material 002",
+			"cant": 2,
+			"cost": 35000,
+			"montoNeto": 4000
+		}
+	],
+
+	"DataSelect":[
+		{
+			"id": 0,
+			"Organizacion de Ventas": "",
+			"Canal de Distribución": "",
+			"Sector": "",
+			"Oficina de Ventas": "",
+			"Grupo de Vendedores": "",
+			"Clase de Documento": "",
+			"Cliente": "",
+			"Facturas": "",
+			"r_fechas": "",
+			"fecha_factura": ""
+		}
+	],
+	"selected": false
+}

@@ -1,0 +1,89 @@
+<core:FragmentDefinition
+  xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+  xmlns="sap.m"
+  controllerName="CreateReturns.controller.CreateReturns">
+
+
+  <VBox class="sapUiSmallMargin">
+
+<!--       <OverflowToolbar class="sapUiMediumMarginTop">
+  <ToolbarSpacer/>
+  <Label text="Refrescar Valores" />
+  <Button text="" type="Default" icon="sap-icon://refresh"/>
+</OverflowToolbar> -->
+
+    <f:SimpleForm id="SimpleForm"
+      editable="true"
+      layout="ResponsiveGridLayout"
+      labelSpanXL="4"
+      labelSpanL="4"
+      labelSpanM="4"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="0"
+      emptySpanL="0"
+      emptySpanM="0"
+      emptySpanS="0"
+      columnsXL="3"
+      columnsL="2"
+      columnsM="2"
+      singleContainerFullSize="false" >
+      <f:content>
+
+        <core:Title text="" />
+        <Label text="Rango de Fecha:" />
+            <DateRangeSelection
+                  id="DRS2"
+                  dateValue="{}"
+                  secondDateValue="{}"
+                  minDate="{}" 
+                  displayFormat="yyyy/MM/dd"
+                  maxDate="{}"
+                  change="handleChange"
+                />
+
+        <Label text="Cliente:" />
+              <SearchField
+                id="searchField-7"
+                placeholder="Cliente"
+                enableSuggestions="true"
+                search="onSearch"
+                suggest="onSuggest_"
+                liveChange="onLiveChange"
+                enabled="false"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/6/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+
+        <Label text="Facturas:" />
+              <SearchField
+                id="searchField-8"
+                placeholder="Facturas"
+                enableSuggestions="true"
+                search="onSearch"
+                enabled="false"
+                liveChange="onLiveChange"
+                suggest="onSuggest_"
+                suggestionItems="{
+                  path: 'localData>/arrayData_01/7/data',
+                  sorter: { path: 'name' }
+                }"
+                >
+                <suggestionItems>
+                  <SuggestionItem text="{localData>name}" description="{localData>name}" key="{localData>id}"/>
+                </suggestionItems>
+              </SearchField>
+
+      </f:content>
+    </f:SimpleForm>
+  </VBox>
+</core:FragmentDefinition>

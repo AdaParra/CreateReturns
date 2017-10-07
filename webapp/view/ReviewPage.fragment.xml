@@ -1,0 +1,151 @@
+<core:FragmentDefinition
+		height="100%"
+		xmlns:layout="sap.ui.layout"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+		<Page id="wizardReviewPage" showHeader="true" title="{i18n>title}">
+			<content>
+				<form:SimpleForm
+						title="1. Datos de Entrada"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Organización de Ventas"/>
+						<Text id="idOrga" text="{localData>/DataSelect/0/Organizacion de Ventas}"/>
+
+						<Label text="Canal de Distribución"/>
+						<Text id="idCanal" text="{localData>/DataSelect/0/Canal de Distribución}"/>
+
+						<Label text="Sector:" />
+						<Text id="idSector" text="{localData>/DataSelect/0/Sector}"/>
+
+						<Label text="Oficina de Ventas:" />
+						<Text id="idOficina" text="{localData>/DataSelect/0/Oficina de Ventas}"/>
+
+						<Label text="Grupo de Vendedores:" />
+						<Text id="idGrupoVend" text="{localData>/DataSelect/0/Grupo de Vendedores}"/>
+
+						<Label text="Clase de Documento:" />
+						<Text id="idClaseDoc" text="{localData>/DataSelect/0/Clase de Documento}"/>
+
+						<Link press="editStepOne" text="Editar" />
+					</form:content>
+				</form:SimpleForm>
+ 
+				<form:SimpleForm
+						title="2. Selección de Factura"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Rango de Fecha"/>
+						
+						<Text id="ProductNameChosen" text="{localData>/DataSelect/0/r_fechas}"/>
+						<Label text="Cliente"/>
+						<Text id="ProductWeightChosen" text="{localData>/DataSelect/0/Cliente}"/>
+						<Label text="Factura"/>
+						<Text id="ProductManufacturerChosen" text="{localData>/DataSelect/0/Facturas}"/>
+						<Link press="editStepTwo" text="Editar" />
+					</form:content>
+				</form:SimpleForm>
+ 
+				<form:SimpleForm
+						title="3. Verificación de Factura"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<Label text="Fecha"/>
+						<Text text="{path:'localData>/DataSelect/0/fecha_factura', type:'sap.ui.model.type.Date', formatOptions: { style: 'long'}}"/>
+						<Label text="Monto total"/>
+						<Text text="{localData>/arrayData_01/7/data/0/montoTotal}"/>
+						<Label text="Impuesto del documento"/>
+						<Text text="{localData>/arrayData_01/7/data/0/impuestoDoc}"/>
+						<Link press="editStepThree" text="Editar" />
+					</form:content>
+				</form:SimpleForm>
+
+				<form:SimpleForm
+						title="Materiales"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+
+					<Table id="idProductsTable"
+			              inset="false"
+			              items="{
+			                path: 'localData>/arrayData_02/',
+			                sorter: {
+			                  path: 'name'
+			                }
+			              }">
+
+			              <columns>
+			                <Column
+			                  minScreenWidth="Tablet"
+			                  demandPopin="true"
+			                  hAlign="Center">
+			                  <Text text="Material" />
+			                </Column>
+			                <Column
+			                  minScreenWidth="Tablet"
+			                  demandPopin="true"
+			                  hAlign="Center">
+			                  <Text text="Cantidad" />
+			                </Column>
+			                <Column
+			                  hAlign="Center">
+			                  <Text text="Precio Neto" />
+			                </Column>
+			                <Column
+			                  hAlign="Center">
+			                  <Text text="Monto Neto" />
+			                </Column>
+			              </columns>
+			              <items>
+			                <ColumnListItem>
+			                  <cells>
+			                    <Text
+			                      text="{localData>name}" />
+			                    <Input value="{localData>cant}" type="Number" textAlign="Right" width="50%" enabled="false" liveChange="onChangeInput"/>
+			                    <!-- <ObjectNumber
+			                      number="{localData>cant}"
+			                      unit=""
+			                      state="" /> -->
+			                    <ObjectNumber
+			                        number="{localData>cost}"
+			                        unit="" />
+			                    <ObjectNumber
+			                        number="{localData>montoNeto}"
+			                        unit="" />
+			                  </cells>
+			                </ColumnListItem>
+			              </items>
+			            </Table>
+
+				</form:SimpleForm>
+
+				<form:SimpleForm
+						title="Observaciones"
+						minWidth="1024"
+						editable="false"
+						layout="ResponsiveGridLayout">
+					<form:content>
+						<TextArea value="" rows="5" />
+					</form:content>
+				</form:SimpleForm>
+ 
+
+			</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button text="Confirmar" type="Success" press="handleWizardSubmit"></Button>
+						<Button text="Cancelar" type="Reject" press="handleWizardCancel"></Button>
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+</core:FragmentDefinition>
